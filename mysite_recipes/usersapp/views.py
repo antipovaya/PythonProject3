@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import  messages
 from .forms import UserRegistrationForm, LoginForm, UserEditForm, ProfileEditForm
@@ -67,4 +67,8 @@ def edit(request):
         profile_form = ProfileEditForm(instance=request.user.profile)
     return render(request,'usersapp/pfofile.html',{'user_form': user_form, 'profile_form': profile_form})
 
+
+def logout_view(request):
+    logout(request)
+    return redirect('recipesapp/home.html')
 # Create your views here.

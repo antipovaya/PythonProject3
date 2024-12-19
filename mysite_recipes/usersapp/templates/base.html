@@ -35,7 +35,7 @@
                 <a class="nav-link active" style="color: aliceblue;" href="{% url 'recipes-create' %}">Добавить рецепт</a>
               </li>
                 <a href="{% url 'dashboard' %}" class="nav-link active" style="color: aliceblue;">Мой профиль</a>
-                <a  class="nav-link active" style="color: aliceblue;" href="{% url 'logout' %}">Выйти</a>
+                <a  class="nav-link active" style="color: aliceblue;" href="{% url 'logout' %}" method="post">Выйти</a>
               {% else %}
               <a class="nav-link active" style="color: aliceblue;" href="{% url 'login' %}">Войти</a>
               <a class="nav-link active" style="color: aliceblue;" href="{% url 'register' %}">Создать аккаунт</a>
